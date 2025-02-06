@@ -18,6 +18,7 @@ begin
 rescue => e
   logger.error("Failed to fetch page content: #{e}")
   exit
+end
 
 # Step 2: Parse the page content using Nokogiri
 doc = Nokogiri::HTML(page_html)
