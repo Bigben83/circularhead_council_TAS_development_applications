@@ -8,7 +8,7 @@ require 'date'
 logger = Logger.new(STDOUT)
 
 # Define the URL of the page
-url = 'https://www.circularhead.tas.gov.au/council-services/development/planning/'
+url = 'https://www.circularhead.tas.gov.au/council-services/development/planning'
 
 # Step 1: Fetch the page content
 begin
