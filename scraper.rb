@@ -10,15 +10,14 @@ logger = Logger.new(STDOUT)
 # Define the URL of the page
 url = 'https://www.circularhead.tas.gov.au/council-services/development/planning'
 
-# Step 1: Fetch the page content
+# Step 1: Set up a User-Agent to simulate a real browser
 begin
   logger.info("Fetching page content from: #{url}")
-  page_html = open(url).read
+  page_html = open(url, "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36").read
   logger.info("Successfully fetched page content.")
 rescue => e
   logger.error("Failed to fetch page content: #{e}")
   exit
-end
 
 # Step 2: Parse the page content using Nokogiri
 doc = Nokogiri::HTML(page_html)
